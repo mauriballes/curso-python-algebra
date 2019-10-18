@@ -1,7 +1,16 @@
+import sys
+
+from PyQt5 import QtWidgets
+
 from proyecto.matriz import Matriz
 from proyecto.utils import suma
 from proyecto.interfaz import Interfaz
 
 if __name__ == "__main__":
-    matriz = Matriz(15, 15)
-    print(matriz)
+    # Init Interfaz
+    app = QtWidgets.QApplication(sys.argv)
+    window = Interfaz()
+    window.setup_ui()
+    window.show()
+    app.exec_()
+
