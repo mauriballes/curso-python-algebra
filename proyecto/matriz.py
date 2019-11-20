@@ -3,7 +3,8 @@ class Matriz:
     Constantes
     """
     DEFAULT_FILAS = 3
-    DEFAULT_COLUMNAS = 3 
+    DEFAULT_COLUMNAS = 3
+    MAX_RANDOM_VALUE = 10
 
     """
     Constructor
@@ -43,7 +44,7 @@ class Matriz:
         for x in range(self._filas):
             fila = []
             for y in range(self._columnas):
-                fila.append(random.randint(1, 100))
+                fila.append(random.randint(1, Matriz.MAX_RANDOM_VALUE))
             matriz.append(fila)
 
         return matriz
