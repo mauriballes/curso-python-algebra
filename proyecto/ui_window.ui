@@ -79,19 +79,6 @@
      <string>Matriz Resultado</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tabla_matriz_resultado">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>390</y>
-      <width>311</width>
-      <height>261</height>
-     </rect>
-    </property>
-    <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>80</number>
-    </attribute>
-   </widget>
    <widget class="QLineEdit" name="edit_fila_a">
     <property name="geometry">
      <rect>
@@ -216,6 +203,19 @@
     <property name="text">
      <string>Escalar</string>
     </property>
+   </widget>
+   <widget class="QTableWidget" name="tabla_matriz_resultado">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>400</y>
+      <width>301</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>80</number>
+    </attribute>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
