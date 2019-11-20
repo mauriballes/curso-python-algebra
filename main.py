@@ -2,8 +2,6 @@ import sys
 
 from PyQt5 import QtWidgets
 
-from proyecto.matriz import Matriz
-from proyecto.utils import suma
 from proyecto.interfaz import Interfaz
 
 if __name__ == "__main__":

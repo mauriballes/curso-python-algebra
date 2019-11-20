@@ -14,8 +14,9 @@ class Interfaz(QtWidgets.QMainWindow):
         self.matriz = Matriz(7, 7)
 
     def setup_ui(self):
-        self.label.setText("Hola a todos a los chicos de Python")
-        self.cargar_boton.clicked.connect(self._push_button_clicked)
+        # self.label.setText("Hola a todos a los chicos de Python")
+        # self.cargar_boton.clicked.connect(self._push_button_clicked)
+        pass
 
     def _push_button_clicked(self):
         self.matriz = Matriz(7,7)
