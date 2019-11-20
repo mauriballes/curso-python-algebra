@@ -1,9 +1,15 @@
 import sys
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import uic
 
 from .matriz import Matriz
-from .utils import llenar_tabla_con_matriz
+from .utils import (llenar_tabla_con_matriz, 
+                    suma_matrices, 
+                    resta_matrices, 
+                    producto_matrices,
+                    producto_escalar_matrices,
+                    inversa_matrices)
 
 class Interfaz(QtWidgets.QMainWindow):
     """
@@ -26,6 +32,11 @@ class Interfaz(QtWidgets.QMainWindow):
         # Acciones Click
         self.boton_a.clicked.connect(self._generar_matriz_a)
         self.boton_b.clicked.connect(self._generar_matriz_b)
+        self.accion_suma_matrices.triggered.connect(self._suma_matrices)
+        self.accion_resta_matrices.triggered.connect(self._resta_matrices)
+        self.accion_producto_matrices.triggered.connect(self._producto_matrices)
+        self.accion_producto_escalar_matrices.triggered.connect(self._producto_escalar_matrices)
+        self.accion_inversa_matrices.triggered.connect(self._inversa_matrices)
 
     """
     Acciones
@@ -49,4 +60,27 @@ class Interfaz(QtWidgets.QMainWindow):
 
         self.matriz_b = Matriz(filas, columnas)
         llenar_tabla_con_matriz(self.tabla_matriz_b, self.matriz_b)
+
+    def _suma_matrices(self):
+        self.matriz_resultado = suma_matrices(self.matriz_a, self.matriz_b)
+        llenar_tabla_con_matriz(self.tabla_matriz_resultado, self.matriz_resultado)
+
+    def _resta_matrices(self):
+        self.matriz_resultado = resta_matrices(self.matriz_a, self.matriz_b)
+        llenar_tabla_con_matriz(self.tabla_matriz_resultado, self.matriz_resultado)
+
+    def _producto_matrices(self):
+        self.matriz_resultado = producto_matrices(self.matriz_a, self.matriz_b)
+        llenar_tabla_con_matriz(self.tabla_matriz_resultado, self.matriz_resultado)
+
+    def _producto_escalar_matrices(self):
+        edit_escalar = self.edit_escalar.text()
+        escalar = int(edit_escalar) if edit_escalar.isdigit() else 1
+
+        self.matriz_resultado = producto_escalar_matrices(self.matriz_a, escalar)
+        llenar_tabla_con_matriz(self.tabla_matriz_resultado, self.matriz_resultado)
+
+    def _inversa_matrices(self):
+        self.matriz_resultado = inversa_matrices(self.matriz_a)
+        llenar_tabla_con_matriz(self.tabla_matriz_resultado, self.matriz_resultado)
         
