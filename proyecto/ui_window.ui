@@ -37,8 +37,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>40</y>
+      <x>50</x>
+      <y>30</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -50,8 +50,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>40</y>
+      <x>470</x>
+      <y>30</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -64,7 +64,7 @@
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>360</y>
+      <y>370</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -83,6 +83,108 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLineEdit" name="edit_fila_a">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>30</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_columna_a">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_fila_b">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>30</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_columna_b">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>30</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>30</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_a">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>30</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Generar A</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_b">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>30</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Generar B</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -97,8 +199,6 @@
     <property name="title">
      <string>Operaciones</string>
     </property>
-    <addaction name="accion_generar_matrices"/>
-    <addaction name="separator"/>
     <addaction name="accion_suma_matrices"/>
     <addaction name="accion_resta_matrices"/>
     <addaction name="accion_producto_matrices"/>
@@ -131,11 +231,6 @@
   <action name="accion_inversa_matrices">
    <property name="text">
     <string>Inversa</string>
-   </property>
-  </action>
-  <action name="accion_generar_matrices">
-   <property name="text">
-    <string>Generar Matrices</string>
    </property>
   </action>
  </widget>

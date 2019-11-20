@@ -1,16 +1,22 @@
 class Matriz:
-    ###############
-    # Constructor #
-    ###############
-    def __init__(self, filas, columnas):
+    """
+    Constantes
+    """
+    DEFAULT_FILAS = 3
+    DEFAULT_COLUMNAS = 3 
+
+    """
+    Constructor
+    """
+    def __init__(self, filas=DEFAULT_FILAS, columnas=DEFAULT_COLUMNAS):
         self._filas = filas
         self._columnas = columnas
 
         self._elementos = self._construir_matriz()
 
-    ##################################################
-    # Getters (Metodos para acceder a los atributos) #
-    ##################################################
+    """
+    Getters (Metodos para acceder a los atributos)
+    """
     def cantidad_filas(self):
         return self._filas
     
@@ -27,9 +33,9 @@ class Matriz:
             return
         self._elementos[fila - 1][columna - 1] = valor
 
-    #############################
-    # Metodos privados de Clase #
-    #############################
+    """
+    Metodos privados de Clase
+    """
     def _construir_matriz(self):
         import random
         matriz = []
@@ -42,9 +48,9 @@ class Matriz:
 
         return matriz
 
-    ##########################################################
-    # Metodo toString (Representacion en String de la Clase) #
-    ##########################################################
+    """
+    Metodo toString (Representacion en String de la Clase)
+    """
     def __str__(self):
         matriz = ""
 
@@ -55,10 +61,9 @@ class Matriz:
 
         return matriz
     
-    ########################
-    # Momento de Diversion #
-    ########################
     """
+    * Momento de Diversion *
+
     Esto es super experimental, no necesitas prestarle mucha atencion.
     De todos modos, aqui lo tienes ;-)
     """
