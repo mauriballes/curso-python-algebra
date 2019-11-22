@@ -9,4 +9,11 @@ En este repositorio podras encontrar todos los requerimientos para el curso de p
 
 ## Configuración del Entorno
 
-Para la configuracion de Python, no te preocupes que esto lo desarrollaremos en el curso. Solo asegurate de descargar las versiones ejecutables para instalar. 
+Para la configuracion de Python, no te preocupes que esto lo desarrollaremos en el curso. Solo asegurate de descargar las versiones ejecutables para instalar.
+
+# Proyecto
+
+- Modificar los valores de las tablas
+- Mejorar la interfaz
+- Construir la logica de las operaciones matriciales
+- Etc....

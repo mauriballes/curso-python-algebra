@@ -1,1 +1,2 @@
+# pip install PyQT5 pyqt5-tools
 PyQt5==5.13.0
