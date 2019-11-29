@@ -12,16 +12,60 @@ def llenar_tabla_con_matriz(tabla, matriz):
             tabla.setItem(i, j, valor)
 
 def suma_matrices(matriz_a, matriz_b):
-    return Matriz()
+    # A(mxn) + B(mxn) = C(mxn)
+    matriz_c = Matriz(matriz_a.cantidad_filas(), matriz_a.cantidad_columnas())
+    for i in range(1, matriz_a.cantidad_filas() + 1):
+        for j in range(1, matriz_a.cantidad_columnas() + 1):
+            matriz_c[i][j] = matriz_a[i][j] + matriz_b[i][j]
+            # valor = matriz_a.get_elemento(i,j) + matriz_b.get_elemento(i,j)
+            # matriz_c.set_elemento(i,j, valor)
+    """
+    i = 3
+    j = 3
+
+    [[1,2,3],   [[1,2,3],     [[ 2, 4, 6], 
+    [4,5,6]]     [5, 7,8]],   [ 9, 12, 14]]
+    """
+
+    return matriz_c
 
 def resta_matrices(matriz_a, matriz_b):
-    return Matriz()
+    # A(mxn) - B(mxn) = C(mxn)
+    matriz_c = Matriz(matriz_a.cantidad_filas(), matriz_a.cantidad_columnas())
+    for i in range(1, matriz_a.cantidad_filas() + 1):
+        for j in range(1, matriz_a.cantidad_columnas() + 1):
+            matriz_c[i][j] = matriz_a[i][j] - matriz_b[i][j]
+            # valor = matriz_a.get_elemento(i,j) - matriz_b.get_elemento(i,j)
+            # matriz_c.set_elemento(i,j, valor)
+    """
+    i = 3
+    j = 3
+
+    [[1,2,3],   [[1,2,3],     [[ 2, 4, 6], 
+    [4,5,6]]     [5, 7,8]],   [ 9, 12, 14]]
+    """
+
+    return matriz_c
 
 def producto_matrices(matriz_a, matriz_b):
     return Matriz()
 
 def producto_escalar_matrices(matriz_a, escalar):
-    return Matriz()
+    matriz_c = Matriz(matriz_a.cantidad_filas(), matriz_a.cantidad_columnas())
+    for i in range(1, matriz_a.cantidad_filas() + 1):
+        for j in range(1, matriz_a.cantidad_columnas() + 1):
+            matriz_c[i][j] = matriz_a[i][j] * escalar
+            # valor = matriz_a.get_elemento(i,j) + matriz_b.get_elemento(i,j)
+            # matriz_c.set_elemento(i,j, valor)
+    """
+    i = 3
+    j = 3
+
+    [[1,2,3],   [[1,2,3],     [[ 2, 4, 6], 
+    [4,5,6]]     [5, 7,8]],   [ 9, 12, 14]]
+    """
+
+    return matriz_c
 
 def inversa_matrices(matriz_a):
     return Matriz()
