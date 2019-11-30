@@ -217,6 +217,19 @@
      <number>80</number>
     </attribute>
    </widget>
+   <widget class="QPushButton" name="boton_editar_a">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>10</y>
+      <width>91</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Editar A</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -224,7 +237,7 @@
      <x>0</x>
      <y>0</y>
      <width>821</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuOperaciones">

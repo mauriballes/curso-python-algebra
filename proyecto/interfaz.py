@@ -32,6 +32,7 @@ class Interfaz(QtWidgets.QMainWindow):
         # Acciones Click
         self.boton_a.clicked.connect(self._generar_matriz_a)
         self.boton_b.clicked.connect(self._generar_matriz_b)
+        self.boton_editar_a.clicked.connect(self._editar_matriz_a)
         self.accion_suma_matrices.triggered.connect(self._suma_matrices)
         self.accion_resta_matrices.triggered.connect(self._resta_matrices)
         self.accion_producto_matrices.triggered.connect(self._producto_matrices)
@@ -60,6 +61,11 @@ class Interfaz(QtWidgets.QMainWindow):
 
         self.matriz_b = Matriz(filas, columnas)
         llenar_tabla_con_matriz(self.tabla_matriz_b, self.matriz_b)
+
+    def _editar_matriz_a(self):
+        for fila in range(self.tabla_matriz_a.rowCount()):
+            for columna in range(self.tabla_matriz_a.columnCount()):
+                self.matriz_a[fila + 1][columna + 1] = int(self.tabla_matriz_a.item(fila, columna).text())
 
     def _suma_matrices(self):
         self.matriz_resultado = suma_matrices(self.matriz_a, self.matriz_b)
