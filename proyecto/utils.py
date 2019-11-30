@@ -47,8 +47,30 @@ def resta_matrices(matriz_a, matriz_b):
 
     return matriz_c
 
-def producto_matrices(matriz_a, matriz_b):
-    return Matriz()
+def producto_matrices(matriz_a: Matriz, matriz_b: Matriz):
+    matriz_r = Matriz(matriz_a.cantidad_filas(), matriz_b.cantidad_columnas())
+    
+    if matriz_a.cantidad_columnas() != matriz_b.cantidad_filas():
+        raise Exception("Nel Perro!!!")
+
+    i = 1
+    j = 1
+
+    for fila in range(1, matriz_a.cantidad_filas() + 1):
+        j = 1
+        for columna in range(1, matriz_b.cantidad_columnas() + 1):
+            fil = matriz_a.get_fila(fila)
+            col = matriz_b.get_columna(columna)
+            valor = 0
+            
+            for k in range(len(fil)):
+                valor = valor + fil[k] * col[k]
+            
+            matriz_r[i][j] = valor
+            j = j + 1
+        i = i + 1
+
+    return matriz_r
 
 def producto_escalar_matrices(matriz_a, escalar):
     matriz_c = Matriz(matriz_a.cantidad_filas(), matriz_a.cantidad_columnas())

@@ -34,6 +34,30 @@ class Matriz:
             return
         self._elementos[fila - 1][columna - 1] = valor
 
+    def get_fila(self, fila):
+        if fila < 1 or fila > self._filas:
+            return []
+        
+        # Obtener fila
+        fil = []
+        for columna in range(1, self._columnas + 1):
+            elemento = self.get_elemento(fila, columna)
+            fil.append(elemento)
+
+        return fil
+
+    def get_columna(self, columna):
+        if columna < 1 or columna > self._columnas:
+            return []
+        
+        # Obtener columna
+        col = []
+        for fila in range(1, self._filas + 1):
+            elemento = self.get_elemento(fila, columna)
+            col.append(elemento)
+
+        return col
+
     """
     Metodos privados de Clase
     """
