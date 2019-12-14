@@ -58,6 +58,45 @@ class Matriz:
 
         return col
 
+    def cargar_identidad(self):
+        if self._filas == self._columnas:
+            for fila in range(1, self._filas + 1):
+                for columna in range(1, self._columnas + 1):
+                    if fila == columna:
+                        self.set_elemento(fila, columna, 1)
+                    else:
+                        self.set_elemento(fila, columna, 0)
+        else:
+            raise Exception
+
+    def multiplicar_fila_por_escalar(self, escalar, fila):
+        if fila < 1 or fila > self._filas:
+            raise Exception
+        
+        # Escalar por Fila
+
+        for columna in range(1, self._columnas + 1):
+            valor = self.get_elemento(fila, columna) * escalar
+            self.set_elemento(fila, columna, valor)
+        
+
+    def multiplicar_adicionar_a_otra_fila(self, fila_m, fila_a, escalar):
+        if fila_m < 1 or fila_m > self._filas:
+            raise Exception
+
+        if fila_a < 1 or fila_a > self._filas:
+            raise Exception
+
+        # Operacion
+        fil = self.get_fila(fila_m) # [4 ,5 , 5, 6]
+        for f in range(len(fil)):
+            valor = fil[f] * escalar
+            fil[f] = valor
+
+        for columna in range(1, self._columnas + 1):
+            valor = self.get_elemento(fila_a, columna) + fil[columna - 1]
+            self.set_elemento(fila_a, columna, valor)
+
     """
     Metodos privados de Clase
     """

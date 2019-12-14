@@ -89,5 +89,23 @@ def producto_escalar_matrices(matriz_a, escalar):
 
     return matriz_c
 
-def inversa_matrices(matriz_a):
-    return Matriz()
+def inversa_matrices(matriz_a: Matriz):
+    # metodo de gauss
+    m_identidad = Matriz(matriz_a.cantidad_filas(), matriz_a.cantidad_columnas())
+    m_identidad.cargar_identidad()
+
+    for columna in range(1, matriz_a.cantidad_columnas() + 1):
+        # diagonal principal
+        elemento = matriz_a[columna][columna]
+        elemento = 1 / elemento
+        matriz_a.multiplicar_fila_por_escalar(elemento, columna)
+        m_identidad.multiplicar_fila_por_escalar(elemento, columna)
+
+        for fila in range(1, matriz_a.cantidad_filas() + 1):
+            if fila != columna:
+                # convertir ceros 0
+                valor = matriz_a.get_elemento(fila, columna) * -1
+                matriz_a.multiplicar_adicionar_a_otra_fila(columna, fila, valor)
+                m_identidad.multiplicar_adicionar_a_otra_fila(columna, fila, valor)
+
+    return m_identidad
